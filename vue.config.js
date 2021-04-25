@@ -1,8 +1,8 @@
 'use strict'
 const path = require('path')
 const px2rem = require('postcss-px2rem')
-const defaultSettings = require('./src/settings.js')
-const name = defaultSettings.title || 'vue Admin Template' // page title
+// const defaultSettings = require('./src/settings.js')
+const name = '展厅手机管理' // page title
 function resolve (dir) {
   return path.join(__dirname, dir)
 }

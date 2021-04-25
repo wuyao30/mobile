@@ -8,16 +8,26 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    redirect: '/powerSwitch',
+    children: [
+      {
+        path: 'powerSwitch',
+        name: 'PowerSwitch',
+        component: () => import('@/views/switch/index')
+      },
+      {
+        path: 'media',
+        name: 'Media',
+        component: () => import('@/views/media/index')
+      },
+      {
+        path: 'singleSwitch',
+        name: 'SingleSwitch',
+        component: () => import('@/views/singleSwitch/index')
+      }
+    ]
   }
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({
